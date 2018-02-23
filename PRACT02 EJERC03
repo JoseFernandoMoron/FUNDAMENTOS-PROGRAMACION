@@ -1,0 +1,25 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void main(){
+	float P1,P2,P3,NotaParciales,EF,NotaExFinal,ProyectoFin,
+		NotaProyect,NotaFinal;
+	cout<<"Ingrese los tres parciales: ";
+	cin>>P1>>P2>>P3;
+	NotaParciales=((P1+P2+P3)/3)*0.4;
+	cout<<"Ingrese la nota del examen final: ";
+	cin>>EF;
+	NotaExFinal=EF*0.4;
+	cout<<"Ingrese la nota del proyecto: ";
+	cin>>ProyectoFin;
+	NotaProyect=ProyectoFin*0.2;
+	NotaFinal=NotaParciales+NotaExFinal+NotaProyect;
+	cout<<"La nota promedio es: "<<NotaFinal<<endl;
+
+	getch();
+
+}
