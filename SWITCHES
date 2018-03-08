@@ -1,0 +1,48 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "stdlib.h" //PARA LIMPIAR LA PANTALLA UNA VEZ EL MENU SE USÓ.
+
+using namespace std;
+
+void main()
+{
+	float a,b,r;
+	int opcion;
+	cout<<"Ingrese los valores que desee usar: "<<endl;
+	cout<<"Primer valor: ";
+	cin>>a;
+	cout<<"Segundo valor: ";
+	cin>>b; cout<<endl;
+	do{ 
+		cout<<"**************************"<<endl;
+		cout<<"*****ELIJA UNA OPCION*****"<<endl;
+		cout<<"*****	1.-Sumar.    *****"<<endl;
+		cout<<"*****	2.-Restar.   *****"<<endl;
+		cout<<"*****	3.-Multiplicar. **"<<endl;
+		cout<<"*****	4.-Dividir.  ***** "<<endl;
+		cout<<"*****	0.-Salir     *****"<<endl;
+		cout<<"**************************"<<endl;
+		cout<<"**************************"<<endl;
+		cout<<"OPCION: "; cin>>opcion;
+		switch (opcion){
+			case 1: r=a+b; break; //"break" indica que una vez cumplida la opción elegida,
+			case 2: r=a-b; break; //éste salta directo a mostrar el resultado o cualquier orden que se le ponga debajo.
+			case 3: r=a*b; break;
+			case 4: r=a/b; break;
+			case 0: cout<<"PRESIONE CUALQUIER TECLA PARA SALIR. "; break;
+			default: cout<<"OPCION INVALIDA"<<endl<<endl<<endl; break;
+		}
+		if(opcion>=1 && opcion<=4){
+		cout<< "El resultado es: "<<r<<endl<<endl;
+		getch();					//GETCH PARA FRENAR EL FUNCIONAMIENTO DEL PROGRAMA.
+		system ("cls");	}			//INSTRUCCION DE LA LIBRERRIA "stdlib.h" para que se limpie la pantalla y se muestre nuevamente lo que está dentro del do{  }
+		else
+		{cout<<endl;}
+	}							
+
+	while(opcion!=0);
+	getch();
+		}
+	
