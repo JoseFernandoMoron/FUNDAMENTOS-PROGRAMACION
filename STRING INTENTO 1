@@ -1,0 +1,128 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 100
+
+using namespace std;
+
+int longit(string nombre);
+bool comparar(string palabra, string palabra2);
+int encontrar( string cadena, string k);
+string subcadena (string nombre, int pos, int l);
+bool palindromo(string palabra); 
+
+void main()
+{
+	int longitud, cont, pos, opc,l;
+	char aux;
+	string var1,var2,nombre; //declarar strings
+	do{
+	cout<<"-----MENU-----"<<endl;
+	cout<<"1.- Longitud"<<endl;
+	cout<<"2.- Comparar " <<endl;
+	cout<<"3.- Encontrar " <<endl;
+	cout<<"4.- Subcadena" <<endl;
+	cout<<"5.- Palindromo"<<endl;
+	cout<<"0.- Salir"<<endl;
+	cout<<"Opcion: "; cin>>opc;
+
+	switch(opc)
+	{
+		case 1: cout<<"Determine la cadena"<<endl;
+			cin.ignore(); //cuando se salta de pedir texto, esto se debe al cin anterior.
+			getline(cin,var1);
+			aux=longit(var1);
+			cout<<"La longitud de la cadena"<<var1<<"es:" <<aux;
+			break;
+		case 2:
+			cin.ignore();
+			cout<<"Ingrese la cadena 1:"<<endl;
+			getline(cin,var1);
+			cout<<"Ingrese la cadena 2: "<<endl;
+			getline(cin,var2);
+			if(comparar(var1,var2))
+				cout<<"Son iguales"<<endl;
+			else
+				cout<<"Son diferentes"<<endl;
+			break;
+		case 3: 
+			cin.ignore();
+			cout<<"Ingresar la cadena principal: "<<endl;	
+			getline(cin,var1);
+			cout<<"Ingresar la cadena a buscar : " <<endl;
+			getline(cin,var2);
+			pos=encontrar(var1,var2);
+			if(pos==-1)
+				cout<<"No esta la cadena dentro de la otra"<<endl;
+			else
+				cout<<"Empieza en la posicion"<<endl;
+			break;
+		case 4:
+			cin.ignore();
+			cout<<"Ingresar la cadena principal";
+			getline(cin,var1);
+			cout<<"Ingresar la posicion a devolver:"<<endl;
+			cin>>pos;
+			nombre=subcadena(var1,pos,2); //el numero 2 es el numero de caracteres que va a devolver.
+			cout<<nombre;
+			break;
+		case 5:
+			cin.ignore();
+			cout<<"Ingrese la cadena: "<<endl;
+			getline(cin,nombre);
+			if(palindromo(nombre))
+				cout<<"
+			
+
+	
+	}
+	}
+
+
+	getch();
+}
+
+//subprogramas
+int longit(string nombre)
+{
+	int aux1;
+	aux1=nombre.length();
+	return aux1;
+}
+
+bool comparar(string palabra, string palabra2)
+{
+	bool aux;//trabajar siempre con un auxiliar del mismo tipo que devuelve la funcion, en este caso bool
+	if(palabra.compare(palabra2)==0)
+		aux=true;
+	else
+		aux=false;
+	return aux;
+
+}
+int encontrar(string cadena, string k)
+{
+	int aux;
+	cadena.find(k);
+	return aux;
+}
+
+string subcadena (string nombre, int pos, int l)
+{
+	string aux;
+	aux=nombre.substr(pos,l);
+	return aux;
+}
+bool palindromo (string palabra)
+{
+	for(int i=0; i<palabra.length()/2;i++)
+	{
+		if(palabra.at(i)!= palabra.at(palabra.length()-1-i))
+			return false;
+		else
+			return true;
+
+	}
+}
