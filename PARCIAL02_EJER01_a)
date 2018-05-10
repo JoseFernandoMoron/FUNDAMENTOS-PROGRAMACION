@@ -1,0 +1,43 @@
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+void cargarV(int a[], int n); 
+int comp(int a[], int n);
+
+void main()
+{int n, S[MAX],M;
+cout<<"Defina el tamaño del vector"<<endl;
+cin>>n;
+cargarV(S, n);
+M=comp(S,n);
+cout<<"La mayor diferencia es : "<<M;
+cout<<endl;
+	getch();
+}
+
+void cargarV(int a[], int n)
+{
+	for(int i=0;i<=n;i++)
+	{cout<<"V["<<i<<"]=";
+	cin>>a[i];
+	}
+
+}
+
+int comp(int a[], int n)
+{	int i=0; int r,S; int mayor;
+	S=0;
+	while(i < n)
+	{
+		r=a[i]-a[i+1];
+		mayor=r;
+		if(mayor>S)
+			S=mayor;
+		return S;
+
+	}
+
+}
