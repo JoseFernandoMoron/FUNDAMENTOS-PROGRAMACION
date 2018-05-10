@@ -34,7 +34,7 @@ int comp(int a[], int n)
 	{
 		r=a[i]-a[i+1];
 		mayor=r;
-		if(mayor>S)
+		if(mayor>S || mayor<S)
 			S=mayor;
 		return S;
 
