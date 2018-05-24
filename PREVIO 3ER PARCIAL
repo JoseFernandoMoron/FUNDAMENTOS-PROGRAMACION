@@ -1,0 +1,105 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include "math.h"
+#define MAX 100
+
+using namespace std;
+float distancia(float xa, float ya, float xb, float yb);
+int sumarVect(double B, double N);
+void cargarMat(int MAT[MAX][MAX],int n, int m);
+void mostrarVect(int V[MAX], int T);
+
+void main()
+{
+	float Xa,Xb,Ya,Yb,D;
+	int opc; double b,n,S;
+	int n1,m, MAT[MAX][MAX];
+	do{
+		cout<<"PREGUNTA 1"<<endl;
+		cout<<"PREGUNTA 2"<<endl;
+		cout<<"PREGUNTA 3"<<endl;
+		cin>>opc;
+		switch(opc)
+		{
+		case 1:
+			cout<<"Dicte los valores del punto 1:"<<endl;
+			cout<<"Xa: ";cin>>Xa;
+			cout<<"Ya: ";cin>>Ya;
+			cout<<"Dicte los valores del punto 2:"<<endl;
+			cout<<"Xb: ";cin>>Xb;
+			cout<<"Yb: ";cin>>Yb;
+			D=distancia(Xa,Ya,Xb,Yb);
+			cout<<"La distancia entre los dos puntos es "<<D<<endl;
+			break;
+		case 2:
+			cout<<"Ingrese el valor de la base: "<<endl;
+			cin>>b;
+			cout<<"Ingrese el valor de n: "<<endl;
+			cin>>n;
+			S=sumarVect(b,n);
+			cout<<"El valor de la serie es : "<<S<<endl;
+		case 3:
+			cout<<"Ingrese los valores de la matriz:"<<endl;
+			cout<<"nº de filas: ";cin>>n1;
+			cout<<"nº de columnas";cin>>m;
+			cargarMat(MAT,n1,m);
+		}
+	}while(opc!=0);
+	cout<<endl;
+	getch();
+}
+
+float distancia(float xa, float ya, float xb, float yb)
+{	float DIS,X,Y;
+	X=xa-xb;
+	Y=ya-yb;
+	DIS=sqrt(pow(X,2) + pow(Y,2));
+	return DIS;
+}
+
+int sumarVect(double B, double N)
+{
+	int S=0; int signo=1,x; int A[MAX];
+	for(int i=1;i<=N; i++)
+	{
+		x=pow(B,i);
+		A[i]=x;
+		S=S+signo*x;
+		signo=signo*-1;
+		cout<<"A["<<i<<"]="<<A[i]<<endl;
+
+	}
+	return S;
+		
+}	
+
+void cargarMat(int MAT[MAX][MAX], int n, int m)
+{	int T, V[MAX],i,j,a;
+	T=n*m;
+	int k=0;
+	for(i=1;i<=n;i++)
+	{	for(j=1; j<=m; j++)
+		{	
+			
+			cout<<"M["<<i<<"]["<<j<<"]="; cin>>MAT[i][j];cout<<endl;
+			V[k]=MAT[i][j];
+			k++;
+
+			
+	}
+
+}
+	mostrarVect(V,T);
+}
+
+void mostrarVect(int V[MAX], int T)
+{
+	for(int i=0;i<T;i++)
+	{
+		cout<<"V["<<i<<"]="<<V[i]<<endl;
+	}
+
+}
+
