@@ -1,0 +1,37 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+ void pasarmatriz(int MAC[MAX][MAX],int filas, int columnas);
+ void mostrarVec(int V[MAX], int tamaño);
+
+ void main(){
+	 int MAC[MAX][MAX];
+	 int x,y;
+	 cout<<"ingrese cuantas filas va tener su matriz: ";
+	 cin>>x;
+	 cout<<"ingrese cuantas columnas va tener su matriz: ";
+	 cin>>y;
+	 pasarmatriz(MAC,x,y);
+	 getch();}
+
+
+
+	  void pasarmatriz(int MAC[MAX][MAX],int filas, int columnas){
+		  int tamaño,k=0,V[MAX];
+		  tamaño=filas*columnas;
+		  for(int i=0;i<filas;i++){
+			  for(int j=0;j<columnas;j++){
+				  cout<<"Matriz["<<i<<"]["<<j<<"]";
+				  cin>>MAC[i][j];
+				  V[k]=MAC[i][j];
+				  k++;
+			  }}
+			  mostrarVec(V,tamaño);
+		  }
+
+	  void mostrarVec(int V[MAX], int tamaño){
+		  for(int i=0;i<tamaño;i++){
+			  cout<<"V["<<i<<"]"<<"="<<V[i]<<endl;
+		 }}
